@@ -6,6 +6,14 @@ function showPage(name) {
   if (navEl) navEl.classList.add('active');
   document.getElementById('nav').classList.remove('open');
   window.scrollTo({ top: 0 });
+
+  // Tell Google Analytics a new page was viewed
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'page_view', {
+      page_title: name,
+      page_path: '/' + name
+    });
+  }
 }
 
 function toggleMenu() {
