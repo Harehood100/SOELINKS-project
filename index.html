@@ -549,44 +549,46 @@
       <h3>Send a Message</h3>
       <p>Fill in the form and we'll get back to you within one business day.</p>
 
-      <div id="contact-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">First Name</label>
-            <input type="text" class="form-input" placeholder="Your first name" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">Last Name</label>
-            <input type="text" class="form-input" placeholder="Your last name" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Email Address</label>
-          <input type="email" class="form-input" placeholder="your@email.com" />
-        </div>
-        <div class="form-group">
-          <label class="form-label">Phone Number</label>
-          <input type="tel" class="form-input" placeholder="+234 ..." />
-        </div>
-        <div class="form-group">
-          <label class="form-label">Service of Interest</label>
-          <select class="form-select">
-            <option value="" disabled selected>Select a service</option>
-            <option>Project Management</option>
-            <option>Construction &amp; Development</option>
-            <option>Real Estate Development</option>
-            <option>Interior Architecture &amp; Design</option>
-            <option>Strategic Consulting</option>
-            <option>General Enquiry</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Your Message</label>
-          <textarea class="form-textarea" placeholder="Tell us about your project or enquiry…"></textarea>
-        </div>
-        <button class="form-submit" onclick="submitForm()">Send Message</button>
-        <p class="form-note">We typically respond within one business day.</p>
+     <div id="contact-form">
+  <form id="fs-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">First Name</label>
+        <input type="text" name="first_name" class="form-input" placeholder="Your first name" required />
       </div>
+      <div class="form-group">
+        <label class="form-label">Last Name</label>
+        <input type="text" name="last_name" class="form-input" placeholder="Your last name" required />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Email Address</label>
+      <input type="email" name="email" class="form-input" placeholder="your@email.com" required />
+    </div>
+    <div class="form-group">
+      <label class="form-label">Phone Number</label>
+      <input type="tel" name="phone" class="form-input" placeholder="+234 ..." />
+    </div>
+    <div class="form-group">
+      <label class="form-label">Service of Interest</label>
+      <select name="service" class="form-select">
+        <option value="" disabled selected>Select a service</option>
+        <option>Project Management</option>
+        <option>Construction &amp; Development</option>
+        <option>Real Estate Development</option>
+        <option>Interior Architecture &amp; Design</option>
+        <option>Strategic Consulting</option>
+        <option>General Enquiry</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Your Message</label>
+      <textarea name="message" class="form-textarea" placeholder="Tell us about your project or enquiry…"></textarea>
+    </div>
+    <button type="submit" class="form-submit">Send Message</button>
+    <p class="form-note">We typically respond within one business day.</p>
+  </form>
+</div>
 
       <div class="form-success" id="form-success">
         <div class="check">

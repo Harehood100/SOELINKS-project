@@ -12,7 +12,34 @@ function toggleMenu() {
   document.getElementById('nav').classList.toggle('open');
 }
 
-function submitForm() {
-  document.getElementById('contact-form').style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
+const form = document.getElementById('fs-form');
+
+if (form) {
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch('https://formspree.io/f/mbdezbgb', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        document.getElementById('contact-form').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        submitBtn.textContent = 'Something went wrong — try again';
+        submitBtn.disabled = false;
+      }
+    } catch (error) {
+      submitBtn.textContent = 'Network error — try again';
+      submitBtn.disabled = false;
+    }
+  });
 }
